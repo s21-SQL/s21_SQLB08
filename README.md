@@ -1,33 +1,40 @@
-# Day 06 — SQL Bootcamp
 
 ## _Let's improve customer experience_
 
-Resume: Today you will see how to add a new business feature into our data model.
+In this project you will learn how to implement business requirements, ensure data integrity through constraints and indexes, optimize database performance, work with sequences and bulk operations, as well as document the database structure — skills that are essential if you are a backend developer, data engineer, or analyst working with production environments and loyalty systems in real companies.
+
 
 💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
 
 ## Contents
 
-1. [Chapter I](#chapter-i) \
-    1.1. [Preamble](#preamble)
-2. [Chapter II](#chapter-ii) \
-    2.1. [General Rules](#general-rules)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Rules of the day](#rules-of-the-day)  
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 — Discounts, discounts , everyone loves discounts](#exercise-00-discounts-discounts-everyone-loves-discounts)  
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 — Let’s set personal discounts](#exercise-01-lets-set-personal-discounts)  
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 — Let’s recalculate a history of orders.](#exercise-02-lets-recalculate-a-history-of-orders)  
-7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 — Improvements are in a way](#exercise-03-improvements-are-in-a-way)  
-8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 — We need more Data Consistency](#exercise-04-we-need-more-data-consistency)
-9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 — Data Governance Rules](#exercise-05-data-governance-rules)
-10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 — Let’s automate Primary Key generation](#exercise-06-lets-automate-primary-key-generation)
+- [How to learn at «School 21»](#how-to-learn-at-school-21)
+- [Chapter I](#chapter-i)
+- [Preamble](#preamble)
+- [Chapter II](#chapter-ii)
+- [Rules of the day](#rules-of-the-day)
+- [Chapter III](#chapter-iii)
+- [Exercise 00 — Discounts, discounts , everyone loves discounts](#exercise-00--discounts-discounts--everyone-loves-discounts)
+- [Exercise 01 — Let’s set personal discounts](#exercise-01--lets-set-personal-discounts)
+- [Exercise 02 — Let’s recalculate a history of orders](#exercise-02--lets-recalculate-a-history-of-orders)
+- [Exercise 03 — Improvements are in a way](#exercise-03--improvements-are-in-a-way)
+- [Exercise 04 — We need more Data Consistency](#exercise-04--we-need-more-data-consistency)
+- [Exercise 05 — Data Governance Rules](#exercise-05--data-governance-rules)
+- [Exercise 06 — Let’s automate Primary Key generation](#exercise-06--lets-automate-primary-key-generation)
+
+
+## How to learn at «School 21»
+1. «School 21» might feel different from your previous educational experiences. It emphasizes high autonomy: you’re given a task, and you must complete it. Throughout the course, you are expected to delve deeper into the subject and solve problems. Use all available means to find information—the resources of the internet are limitless. Be mindful of your sources (for example, if you use AI tools): verify, think, analyze, and compare.
+2. You will need to present your solution to other students and receive feedback from them. Peer-to-peer (P2P) learning is a process where students exchange knowledge and experience, simultaneously acting as both mentors and learners. This way you can learn not only from materials but also from each other.
+3. Don’t hesitate to ask for help: around you are peers who are also navigating this path for the first time. Likewise, don’t be afraid to respond to requests for help—your experience is valuable and useful, so share it openly with others. Join RocketChat to stay updated with the latest community announcements.
+4. Your learning will be meaningless if you simply copy others’ solutions. If you receive help, always make sure you fully understand the why, how, and purpose behind it. Don’t be afraid to make mistakes.
+5. If you’re stuck on something and feel like you’ve tried everything but still don’t know what to do—just take a break! Believe it or not, this advice has helped many professionals in their work. Step away, clear your mind, and the right solution might just come to you next time!
+6. The learning process is just as important as the result. It’s not just about solving the task—it’s about understanding how to solve it.
+
+How to work with the project: 
+1. Before starting, clone the project from GitLab into a repository of the same name.
+2. All code files must be created in the src/ folder of the cloned repository.
+3. After cloning, create a develop branch and push changes to it in GitLab. Push to GitLab in the develop branch as well.
 
 ## Chapter I
 ## Preamble
@@ -46,27 +53,17 @@ On the other hand, your model should solve your functional tasks with minimal im
 
 
 ## Chapter II
-## General Rules
-
-- Use this page as your only reference. Do not listen to rumors and speculations about how to prepare your solution.
-- Make sure you are using the latest version of PostgreSQL.
-- It is perfectly fine if you use the IDE to write source code (aka SQL script).
-- To be evaluated, your solution must be in your GIT repository.
-- Your solutions will be evaluated by your peers.
-- You should not leave any files in your directory other than those explicitly specified by the exercise instructions. It is recommended that you modify your `.gitignore` to avoid accidents.
-- Got a question? Ask your neighbor to the right. Otherwise, try your neighbor on the left.
-- Your reference manual: mates / Internet / Google. 
-- Read the examples carefully. You may need things not specified in the topic.
-- And may the SQL-Force be with you!
-Absolutely anything can be represented in SQL! Let's get started and have fun!
-
-## Chapter III
 ## Rules of the day
 
-- Please make sure you have your own database and access to it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware that all changes you made in Day03 during Exercises 07-13 and in Day04 during Exercise 07 should be on place (its similar like in real world when we applied a release and need to be consistent with data for new changes).**
-- All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please review this section before starting.
-- Please take a look at the Logical View of our Database Model. 
+- Make sure you are using the latest version of PostgreSQL.
+- It is perfectly fine if you use the IDE to write source code (aka SQL script).
+- You should not leave any files in your directory other than those explicitly specified by the exercise instructions. It is recommended that you modify your `.gitignore' to avoid accidents. 
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware that all changes you made in SQLB4_DML (Day 03) during Exercises 07-13 and in SQLB5_Snapshots (Day 04) during Exercise 07 should be on place (its similar like in real world when we applied a release and need to be consistent with data for new changes).**
+- All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
+- And may the SQL-Force be with you!
+- Absolutely anything can be represented in SQL! Let's get started and have fun!
+
+Please take a look at the Logical View of our Database Model. 
 
 ![schema](misc/images/schema.png)
 
@@ -99,7 +96,7 @@ Absolutely anything can be represented in SQL! Let's get started and have fun!
 
 People's visit and people's order are different entities and don't contain any correlation between data. For example, a customer can be in a restaurant (just looking at the menu) and at the same time place an order in another restaurant by phone or mobile application. Or another case, just be at home and again make a call with order without any visits.
 
-## Chapter IV
+## Chapter III
 ## Exercise 00 — Discounts, discounts , everyone loves discounts
 
 | Exercise 00: Discounts, discounts , everyone loves discounts |                                                                                                                          |
@@ -119,8 +116,6 @@ Think about personal discounts for people from one side and pizza restaurants fr
 - Add a discount attribute to store a discount value in percent. Remember that the discount value can be a floating-point number (just use the `numeric` datatype). So please choose the appropriate datatype to cover this possibility.
 
 
-
-## Chapter V
 ## Exercise 01 — Let’s set personal discounts
 
 | Exercise 01: Let’s set personal discounts|                                                                                                                          |
@@ -149,8 +144,6 @@ So, there is a table `person_order` which stores the history of a person's order
 
 
 
-
-## Chapter VI
 ## Exercise 02 — Let’s recalculate a history of orders
 
 | Exercise 02: Let’s recalculate a history of orders|                                                                                                                          |
@@ -168,7 +161,7 @@ Write a SQL statement that returns the orders with actual price and price with d
 | Andrey | mushroom pizza | 1100 | 858 | Dominos |
 | ... | ... | ... | ... | ... |
 
-## Chapter VII
+
 ## Exercise 03 — Improvements are in a way
 
 | Exercise 03: Improvements are in a way |                                                                                                                          |
@@ -189,7 +182,6 @@ The proof example is below:
     ...
 
 
-## Chapter VIII
 ## Exercise 04 — We need more Data Consistency
 
 
@@ -208,7 +200,6 @@ Please add the following constraint rules for existing columns of the `person_di
 - discount column should be in a range values from 0 to 100 (use constraint name `ch_range_discount`).
 
 
-## Chapter IX
 ## Exercise 05 — Data Governance Rules
 
 
@@ -221,7 +212,7 @@ Please add the following constraint rules for existing columns of the `person_di
 
 To comply with Data Governance Policies, you need to add comments for the table and the table's columns. Let's apply this policy to the `person_discounts` table. Please add English or Russian comments (it is up to you) explaining what is a business goal of a table and all its attributes.
 
-## Chapter X
+
 ## Exercise 06 — Let’s automate Primary Key generation
 
 
